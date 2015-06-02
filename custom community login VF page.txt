@@ -1,0 +1,133 @@
+<apex:page standardStylesheets="false" sidebar="false" showHeader="false" docType="html-5.0" controller="SiteLoginController">
+    
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content=""/>
+		<meta name="author" content=""/>
+    
+		<title>GSA Labs Login</title>
+
+    <!-- Bootstrap core CSS -->
+		<apex:stylesheet value="{!URLFOR($Resource.BootstrapCommLoginPage,'bootstrap-3.3.4-dist/css/bootstrap.min.css')}" />
+
+    <!-- Additional style sheet required for this page-->  
+		<apex:stylesheet value="{!URLFOR($Resource.BootstrapCommLoginPage,'bootstrap-3.3.4-dist/morestyles/signin.css')}"/> 
+      
+    <!-- java script to change the background of the page on every refresh -->
+		<script type='text/javascript'>
+			
+			// count will change depends on the no.of images 
+			var totalCount = 2;
+			function ChangeIt() 
+			{
+				var num = Math.ceil( Math.random() * totalCount );
+				
+				if (num == 1){
+					document.getElementById('header').style.background="url(URL of background image) no-repeat center top";
+					document.getElementById('header').style.marginTop= "-20px";
+					document.getElementById('header').style.paddingTop= "150px";
+					document.getElementById('header').style.backgroundAttachment= "relative";
+					document.getElementById('header').style.backgroundPosition= "center center";
+					document.getElementById('header').style.minHeight= "650px";
+					document.getElementById('header').style.width= "100%";
+					document.getElementById('header').style.backgroundSize="100%";
+					document.getElementById('header').style.backgroundSize="cover";
+					document.getElementById('build-text').innerHTML="<strong>Comment regarding the Image</strong>";
+				}
+				
+				//Add the below else if content as the value of the totalCount changes
+				else if(num==2){
+					document.getElementById('header').style.background="url(URL of 2nd background image) no-repeat center top";
+					document.getElementById('header').style.marginTop= "-20px";
+					document.getElementById('header').style.paddingTop= "150px";
+					document.getElementById('header').style.backgroundAttachment= "relative";
+					document.getElementById('header').style.backgroundPosition= "center center";
+					document.getElementById('header').style.minHeight= "650px";
+					document.getElementById('header').style.width= "100%";
+					document.getElementById('header').style.backgroundSize="100%";
+					document.getElementById('header').style.backgroundSize="cover";
+					document.getElementById('build-text').innerHTML="<strong>Comment regarding the Image</strong>";
+				}
+			}
+		</script>
+	</head>
+	
+	<body onLoad="ChangeIt()">
+
+		<!-- Fixed navbar -->
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="URL of About page">About</a>
+					<a class="navbar-brand" href="URL of Terms&Conditions page">Terms &amp; Conditions</a>
+				</div>
+				<div class="nav navbar-nav navbar-right">
+					<a class="btn btn-sm btn-primary btn-padding" href="//URL of self registration page">
+							Sign Up 
+					</a> 
+				</div> <!-- navigation bar -->
+			</div>
+		</div>
+    
+		<div id="wrapper"> 
+			<div id="header">
+				<div class="container-fixed pull-left" id = "build-location">
+					<div class= "text-left" id="build-text"> </div>
+				</div> <!-- /container -->
+		
+				<br/><br/><br/>
+				
+				<div class="container">
+					<h1 class="form-signin-heading"><strong>GSA Labs</strong></h1>
+					
+					<!-- To make the page as a secured login page -->
+					<apex:form id="loginForm" forceSSL="true" styleClass="form-signin">
+					
+						<!-- All the error messages are displayed here and can add custom styles -->
+						<apex:messages styleClass="page-messages" layout="table"/>
+
+						<apex:inputText required="true" id="login-email" styleClass="form-control un" value="{!username}" label="Username"/>
+						<apex:inputSecret id="login-password" styleClass="form-control pw" value="{!password}" label="Pasword"/>
+						<apex:commandButton action="{!login}" value="Sign in" id="login-submit" styleClass="btn btn-lg btn-primary btn-block"/>
+						
+						<a class="btn btn-lg btn-block btn-info" href="Paste URL of the Single Sign On here">
+							GSA Employees?
+						</a> 
+						
+						<a class="btn btn-md btn-block btn-Link" href="{!$Site.CurrentSiteUrl}secur/forgotpassword.jsp?locale=us">
+							<strong> Forgot Password? </strong>
+						</a>
+					</apex:form>
+				</div> <!-- /container -->
+			</div> <!-- /Header -->   
+			
+			<div id="footer">
+				<div class="container-fixed text-center">
+					 <div class="row">
+						<font color="white">
+							<p class="copyright">Copyright &copy; XXXX agency</p>
+						</font>        
+					</div>     
+				</div> <!-- /container -->  
+			</div> <!-- /footer -->
+		</div>  <!-- Wrapper -->
+	</body>
+  
+<script src="{!URLFOR($Resource.BootstrapCommLoginPage, 'bootstrap-3.3.4-dist/morestyles/jquery-1.10.2.min.js')}"></script>
+
+<!-- jQuery script to show the Username and password labels on respective fields -->
+<script>
+$(document).ready(function() {
+    $('.un').attr('placeholder','{!$Label.site.username}');
+    $('.pw').attr('placeholder','{!$Label.site.password}');
+});
+</script>   
+
+  
+</html>
+
+</apex:page>
