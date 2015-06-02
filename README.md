@@ -1,4 +1,4 @@
-# CommunitiesLoginPage
+# Communities Login Page
 ## How to Setup
 1. Download a copy of this master into your local machine.
 2. Copy the .page and .cls file into the workspace.
