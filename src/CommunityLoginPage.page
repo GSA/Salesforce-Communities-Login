@@ -27,7 +27,7 @@
 				var num = Math.ceil( Math.random() * totalCount );
 				
 				if (num == 1){
-					document.getElementById('header').style.background="url(URL of background image) no-repeat center top";
+					document.getElementById('header').style.background="url(https://www.globe.gov/globe-gov-home-portlet/css/images/blank.png) no-repeat center top";
 					document.getElementById('header').style.marginTop= "-20px";
 					document.getElementById('header').style.paddingTop= "150px";
 					document.getElementById('header').style.backgroundAttachment= "relative";
@@ -36,12 +36,12 @@
 					document.getElementById('header').style.width= "100%";
 					document.getElementById('header').style.backgroundSize="100%";
 					document.getElementById('header').style.backgroundSize="cover";
-					document.getElementById('build-text').innerHTML="<strong>Comment regarding the Image</strong>";
+					document.getElementById('build-text').innerHTML="<strong>Comment regarding the Image1</strong>";
 				}
 				
 				//Add the below else if content as the value of the totalCount changes
 				else if(num==2){
-					document.getElementById('header').style.background="url(URL of 2nd background image) no-repeat center top";
+					document.getElementById('header').style.background="url(https://www.globe.gov/globe-gov-home-portlet/css/images/blank.png) no-repeat center top";
 					document.getElementById('header').style.marginTop= "-20px";
 					document.getElementById('header').style.paddingTop= "150px";
 					document.getElementById('header').style.backgroundAttachment= "relative";
@@ -50,7 +50,7 @@
 					document.getElementById('header').style.width= "100%";
 					document.getElementById('header').style.backgroundSize="100%";
 					document.getElementById('header').style.backgroundSize="cover";
-					document.getElementById('build-text').innerHTML="<strong>Comment regarding the Image</strong>";
+					document.getElementById('build-text').innerHTML="<strong>Comment regarding the Image2</strong>";
 				}
 			}
 		</script>
