@@ -1,4 +1,5 @@
 # Communities Login Page
+A Bootstrap login page for Salesforce Communities<br/>
 ## How to Setup
 1. Download folder "src" into your local workspace.
 1. Upload the bootstrap zip file into salesforce as a static resource.
