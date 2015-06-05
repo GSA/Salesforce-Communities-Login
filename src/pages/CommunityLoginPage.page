@@ -60,22 +60,29 @@
 
 		<!-- Fixed navbar -->
 		<div class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="/URLofAboutPage">About</a>
-					<a class="navbar-brand" href="/URLofTerms&Conditionspage">Terms &amp; Conditions</a>
-				</div>
-				<div class="nav navbar-nav navbar-right">
-					<a class="btn btn-sm btn-primary btn-padding" href="//URLofSelfRegistrationPage">
-							Sign Up 
-					</a> 
-				</div> <!-- navigation bar -->
+		  <div class="container">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-toggle" aria-expanded="false" aria-controls="nav-toggle">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
 			</div>
+			<div id="nav-toggle" class="navbar-collapse collapse" aria-expanded="true">
+			  <ul class="nav navbar-nav">
+				<li><a href="./AboutPage">About</a></li>
+				<li><a href="./Terms&ConditionsPage">Terms and Conditions</a></li>
+			  </ul>
+			  <ul class="nav navbar-nav navbar-right">
+				<li><a href="{!$Site.CurrentSiteUrl}SelfRegisterPageName">Sign Up</a></li>
+			  </ul>
+			</div><!--/.nav-collapse -->
+		  </div>
 		</div>
     
 		<div id="wrapper"> 
 			<div id="header">
-				<div class="container-fixed pull-left" id = "build-location">
+				<div class="container-fluid pull-left" id = "build-location">
 					<div class= "text-left" id="build-text"> </div>
 				</div> <!-- /container -->
 		
@@ -88,13 +95,13 @@
 					<apex:form id="loginForm" forceSSL="true" styleClass="form-signin">
 					
 						<!-- All the error messages are displayed here and can add custom styles -->
-						<apex:messages styleClass="page-messages" layout="table"/>
+						<apex:messages styleClass="page-messages text-center" layout="table"/>
 
 						<apex:inputText required="true" id="login-email" styleClass="form-control un" value="{!username}" label="Username"/>
 						<apex:inputSecret id="login-password" styleClass="form-control pw" value="{!password}" label="Pasword"/>
 						<apex:commandButton action="{!login}" value="Sign in" id="login-submit" styleClass="btn btn-lg btn-primary btn-block"/>
 						
-						<a class="btn btn-lg btn-block btn-info" href="Paste URL of the Single Sign On here">
+						<a class="btn btn-lg btn-block btn-info" href="PasteURLforSingleSignOn_here">
 							Single Sign On
 						</a> 
 						
@@ -118,6 +125,7 @@
 	</body>
   
 <script src="{!URLFOR($Resource.BootstrapCommLoginPage, 'bootstrap-3.3.4-dist/morestyles/jquery-1.10.2.min.js')}"></script>
+<script src="{!URLFOR($Resource.BootstrapCommLoginPage, 'bootstrap-3.3.4-dist/js/bootstrap.min.js')}"></script>
 
 <!-- jQuery script to show the Username and password labels on respective fields -->
 <script>
